@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Controller;
+
+use App\Entity\Workshops;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+
+final class WorkshopController extends AbstractController
+{
+    #[Route('/workshop', name: 'app_workshop')]
+    public function index(Workshops $workshops): Response
+    {
+        return $this->render('workshop/index.html.twig', [
+            'workshops' => $workshops,
+        ]);
+    }
+}
