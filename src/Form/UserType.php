@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -11,8 +12,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\LessThan;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
+
 
 
 
@@ -51,6 +54,7 @@ class UserType extends AbstractType
             ->add('phoneNumber', TextType::class, [
                 'label' => 'telefoonnummer',
                 'attr' => ['placeholder' => '0612345678', 'pattern' => '\^06\s?\d{8}$'],
+                'required' => false,
                 'constraints' => [
                     new Assert\NotBlank(message: 'Het veld mag niet leeg zijn.'),
                     new Assert\Regex(pattern: '/^\06\s?\d{8}$/', message: 'Vul een geldig telefoonnummer in.')
@@ -58,10 +62,35 @@ class UserType extends AbstractType
             ])
 
             ->add('birthDate', null, [
-                'widget' => 'single_text'
+                'label' => 'Geboortedatum',
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+                'constraints' => [
+                    new Assert\LessThan('today', message: 'Uw geboortedatum kan niet in de toekomst zijn.'),
+                    new Assert\NotBlank(message: 'Het veld mag niet leeg zijn.'),
+                ]
+
             ])
-            ->add('parentEmail')
-            ->add('lunchPackage')
+            ->add('emptyParentEmail', EmailType::class, [
+                'label' => 'Email ouder',
+                'attr' => ['placeholder' => 'ouder@voorbeeld.nl'],
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new Assert\Email(message: 'Vul een geldig email adres in.'),
+                    new Assert\NotBlank(message: 'Het veld mag niet leeg zijn.')
+                ]
+            ])
+            ->add('lunchPackage', ChoiceType::class, [
+                'label' => 'Lunchpakket',
+                'attr' => ['placeholder' => 'Maak een keuze'],
+                'choices' => [
+                    'Standaard' => 'standaard',
+                    'Vegetarisch' => 'vegetarisch',
+                    'Veganistisch' => 'veganistisch',
+                    'Halal' => 'halal'
+                ]
+            ])
             ->add('workshops')
         ;
     }
