@@ -27,16 +27,16 @@ class Workshops
     private ?string $room = null;
 
     #[ORM\Column(type: Types::TIME_IMMUTABLE)]
-    private ?\DateTimeImmutable $start_time = null;
+    private ?\DateTimeImmutable $startTime = null;
 
     #[ORM\Column(type: Types::TIME_IMMUTABLE)]
-    private ?\DateTimeImmutable $end_time = null;
+    private ?\DateTimeImmutable $endTime = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $capacity = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
-    private ?int $min_age = null;
+    private ?int $minAge = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $active = null;
@@ -96,24 +96,24 @@ class Workshops
 
     public function getStartTime(): ?\DateTimeImmutable
     {
-        return $this->start_time;
+        return $this->startTime;
     }
 
-    public function setStartTime(\DateTimeImmutable $start_time): static
+    public function setStartTime(\DateTimeImmutable $startTime): static
     {
-        $this->start_time = $start_time;
+        $this->startTime = $startTime;
 
         return $this;
     }
 
     public function getEndTime(): ?\DateTimeImmutable
     {
-        return $this->end_time;
+        return $this->endTime;
     }
 
-    public function setEndTime(\DateTimeImmutable $end_time): static
+    public function setEndTime(\DateTimeImmutable $endTime): static
     {
-        $this->end_time = $end_time;
+        $this->endTime = $endTime;
 
         return $this;
     }
@@ -132,12 +132,12 @@ class Workshops
 
     public function getMinAge(): ?int
     {
-        return $this->min_age;
+        return $this->minAge;
     }
 
-    public function setMinAge(int $min_age): static
+    public function setMinAge(int $minAge): static
     {
-        $this->min_age = $min_age;
+        $this->minAge = $minAge;
 
         return $this;
     }

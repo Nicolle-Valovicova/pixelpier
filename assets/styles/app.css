@@ -1,3 +1,37 @@
+:root {
+    --ink: #1b1f3b;
+    --orange: #ff5a36;
+    --mint: #2ec4b6;
+    --creme: #fff8f0;
+    --grey: #6b6f80;
+    --red: #c62828;
+}
 body {
-    background-color: skyblue;
+    background-color: var(--creme);
+}
+/* header, btns, text */
+.ink {
+    background-color: #1b1f3b;
+}
+.ink-text {
+    color: #1b1f3b;
+}
+/* btns, selected, accent, almost full */
+.orange {
+    background-color: var(--orange);
+}
+/* labels, bar, parent field */
+.mint{
+    background-color: var(--mint);
+}
+.mint-text{
+    color: var(--mint);
+}
+/* helptext, metadata */
+.grey-text{
+    color: var(--grey);
+}
+/* faults and reds */
+.red-text{
+    color: var(--red);
 }

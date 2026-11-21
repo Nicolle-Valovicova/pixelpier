@@ -72,7 +72,7 @@ class UserType extends AbstractType
             ->add('birthDate', DateTimeType::class, [
                 'label' => 'Geboortedatum',
                 'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
+                // 'format' => 'yyyy-MM-dd',
                 'mapped' => false,
                 'constraints' => [
                     new Assert\LessThan('today', message: 'Uw geboortedatum kan niet in de toekomst zijn.'),
@@ -82,7 +82,7 @@ class UserType extends AbstractType
             ])
             ->add('parentEmail', EmailType::class, [
                 'label' => 'Email ouder',
-                'attr' => ['placeholder' => 'ouder@voorbeeld.nl'],
+                'attr' => ['placeholder' => 'ouder@voorbeeld.nl', 'class' => 'red-text'],
                 'required' => false,
                 'constraints' => [
                     new Assert\Email(message: 'Vul een geldig email adres in.'),
@@ -100,11 +100,12 @@ class UserType extends AbstractType
             ])
             ->add('workshops', EntityType::class, [
                 'class' => Workshops::class,
+                'choice_label' => 'title',
                 'multiple' => true,
                 'expanded' => true,
                 'query_builder' => function (EntityRepository $er): QueryBuilder {
                     return $er->createQueryBuilder('u')
-                        ->orderBy('u.username', 'ASC');
+                        ->orderBy('u.startTime', 'ASC');
                 },
                 'constraints' => [
                     new Assert\Count(
@@ -124,7 +125,9 @@ class UserType extends AbstractType
                     new Assert\Length(max: 300, maxMessage: 'Uw opmerking mag maximaal 300 tekens bevatten'),
                 ]
             ])
-            ->add('Inschrijving versturen ->', SubmitType::class)
+            ->add('save', SubmitType::class, [
+                'attr' => ['placeholder' => 'Inscrijving versturen'],
+            ])
         ;
     }
 
