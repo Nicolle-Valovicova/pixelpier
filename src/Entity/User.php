@@ -54,6 +54,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::SIMPLE_ARRAY)]
     private array $workshops = [];
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $comment = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -215,6 +218,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setWorkshops(array $workshops): static
     {
         $this->workshops = $workshops;
+
+        return $this;
+    }
+
+    public function getComment(): ?string
+    {
+        return $this->comment;
+    }
+
+    public function setComment(string $comment): static
+    {
+        $this->comment = $comment;
 
         return $this;
     }
