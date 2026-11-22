@@ -21,10 +21,10 @@
         {% endif %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg ink creme-text d-flex">
+        <nav class="navbar width-80 navbar-expand-lg ink creme-text d-flex">
             <nav class="navbar">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('/img/logo-maakfest-wit.svg') }}"height="30" class="d-inline-block align-top" alt="">
+                    <img src="{{ asset('/img/logo-maakfest-wit.svg') }}"height="50" class="d-inline-block align-top" alt="">
                 </a>
             </nav>            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,14 +40,17 @@
                     {% if is_granted('ROLE_ADMIN') %}
                     
                         <li class="nav-item">
-                            <a class="nav-link  creme-text" href="#">Overzicht voor organisatie</a>
+                            <a class="nav-link  creme-text" href="#">Overzicht (organisatie)</a>
                         </li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
+    <div class="container ink" width="100%" height="20%">
 
+    </div>
         {% block body %}
+        
         {% endblock %}
         <script src="{{asset('/js/script.js')}}" defer></script>
     </body>

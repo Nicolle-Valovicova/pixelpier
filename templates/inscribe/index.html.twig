@@ -3,24 +3,17 @@
 {% block title %}Inschrijven{% endblock %}
 
 {% block body %}
-    <style>
-        .example-wrapper {
-            margin: 1em auto;
-            max-width: 800px;
-            width: 95%;
-            font: 18px/1.5 sans-serif;
-        }
-        .example-wrapper code {
-            background: #f5f5f5;
-            padding: 2px 6px;
-        }
-    </style>
+    <div class="container width-80">
+        <h6 class="mint ink-text inscribe-badge">ZATERDAG 17 APRIL, DE WERKPLAATS, DEN HAAG</h6>
+        <h1>Kom maken op <span class="orange-text">MAAKfest</span></h1>
+        <p width="30px">Kies maximaal 2 workshops, vul je gegevens in en je plek is gereserveerd. Deelname is gratis, op = op.</p>
+    </div>
 
     <div class="container-md my-5">
         {{ form_start(form) }}
             <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
                 <div class="p-2"> 
-                    {{ form_row(form.firstName) }}
+                    {{ form_row(form.firstName) }} 
                     {{ form_errors(form.firstName, {'attr': {'class': 'red-text'}}) }}</div>
                 <div class="p-2">
                     {{ form_row(form.lastName) }}
@@ -35,7 +28,7 @@
                     {{ form_errors(form.phoneNumber, {'attr': {'class': 'red-text'}}) }}
                 </div>
                 <div class="p-2">
-                    {{ form_row(form.birthDate) }}
+                    {{ form_row(form.birthDate, {'attr': {'class': 'birthDatePicker'}}) }}
                     {{ form_errors(form.birthDate, {'attr': {'class': 'red-text'}}) }}
                 </div>
                 <div class="p-2">
@@ -46,7 +39,7 @@
         </div>
         <div class="container">
             {{ form_row(form.parentEmail, {'attr': {'class': 'parentEmailField'}}) }}
-                {{ form_errors(form.parentEmail, {'attr': {'class': 'red-text'}}) }}
+            {{ form_errors(form.parentEmail, {'attr': {'class': 'red-text'}}) }}
         </div>
         <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
             <div class="p-2"> 

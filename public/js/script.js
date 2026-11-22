@@ -1,14 +1,34 @@
+let inputBirthDate = document.querySelector(".birthDatePicker").value; // Get value
+const parentField = document.querySelector(".parentEmailField");
+
+function showParentfield() {
+    parentField.classList.remove("hidden");
+    parentField.classList.add("show");
+}
+
+function hideParentfield() {
+    parentField.classList.remove("show");
+    parentField.classList.add("hidden");
+}
+
+hideParentfield();
+
 function calculateAge(birthDate) {
-  const today = new Date();
+    const today = new Date();
 
-  let years = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
-  const dayDiff = today.getDate() - birthDate.getDate();
+    let years = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    const dayDiff = today.getDate() - birthDate.getDate();
 
-  // If birthday has not occurred this year yet, subtract 1
-  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-    years--;
-  }
+    // If birthday has not occurred this year yet, subtract 1
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        years--;
+    }
 
-  return years;
+    if (years < 16) {
+        showParentfield();
+    } else {
+        hideParentfield();
+    }
+    return years;
 }

@@ -28,6 +28,9 @@ body {
 .orange {
     background-color: var(--orange);
 }
+.orange-text {
+    color: var(--orange);
+}
 /* labels, bar, parent field */
 .mint{
     background-color: var(--mint);
@@ -42,4 +45,20 @@ body {
 /* faults and reds */
 .red-text{
     color: var(--red);
+}
+.width-80{
+    width: 80%;
+    justify-self: center;
+}
+.inscribe-badge{
+    border-radius: 25px;
+    padding: 5px;
+    width: fit-content;
+    font-size: 12px;
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
 }
