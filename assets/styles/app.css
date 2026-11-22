@@ -9,9 +9,9 @@
 
 body {
   background-image: linear-gradient(
-    to right,
-    var(--ink) 20%,
-    var(--creme) 20% 100%,
+    to bottom,
+    var(--ink) 25%,
+    var(--creme) 25% 100%
   );
 }
 /* header, btns, text */
@@ -61,4 +61,18 @@ body {
 }
 .show{
     display: block;
+}
+.form-style{
+    background-color: white;
+}
+.step-ball-inscribe{
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50px;
+}
+.input{
+    border: 2px solid #6b6f8048;
+}
+.parentContainer{
+    border: 2px 0px 0px 0px solid var(--mint);
 }

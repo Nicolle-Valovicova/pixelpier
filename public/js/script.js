@@ -1,14 +1,19 @@
 let inputBirthDate = document.querySelector(".birthDatePicker").value; // Get value
 const parentField = document.querySelector(".parentEmailField");
+const parentInfoText = document.querySelector("#parentInfoText");
 
 function showParentfield() {
     parentField.classList.remove("hidden");
     parentField.classList.add("show");
+    parentInfoText.classList.remove("hidden");
+    parentInfoText.classList.add("show");
 }
 
 function hideParentfield() {
     parentField.classList.remove("show");
-    parentField.classList.add("hidden");
+    parentField.classList.remove("show");
+    parentInfoText.classList.add("hidden");
+    parentInfoText.classList.add("hidden");
 }
 
 hideParentfield();

@@ -32,7 +32,7 @@ final class InscribeController extends AbstractController
         }
 
         return $this->render('inscribe/index.html.twig', [
-            'form' => $form,
+            'form' => $form->createView(),
         ]);
     }
     #[Route('/inscribe/sucess', name: 'app_success')]

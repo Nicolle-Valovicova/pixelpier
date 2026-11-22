@@ -5,40 +5,44 @@
 {% block body %}
     <div class="container width-80">
         <h6 class="mint ink-text inscribe-badge">ZATERDAG 17 APRIL, DE WERKPLAATS, DEN HAAG</h6>
-        <h1>Kom maken op <span class="orange-text">MAAKfest</span></h1>
-        <p width="30px">Kies maximaal 2 workshops, vul je gegevens in en je plek is gereserveerd. Deelname is gratis, op = op.</p>
+        <h1 class="creme-text">Kom maken op <span class="orange-text">MAAKfest</span></h1>
+        <p class="grey-text" width="30px">Kies maximaal 2 workshops, vul je gegevens in en je plek is gereserveerd. Deelname is gratis, op = op.</p>
     </div>
 
-    <div class="container-md my-5">
+    <div class="container-md form-style my-5">
         {{ form_start(form) }}
-            <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
-                <div class="p-2"> 
-                    {{ form_row(form.firstName) }} 
-                    {{ form_errors(form.firstName, {'attr': {'class': 'red-text'}}) }}</div>
-                <div class="p-2">
-                    {{ form_row(form.lastName) }}
-                    {{ form_errors(form.lastName, {'attr': {'class': 'red-text'}}) }}
-                </div>
-                <div class="p-2">
-                    {{ form_row(form.email) }}
-                    {{ form_errors(form.email, {'attr': {'class': 'red-text'}}) }}
-                </div>
-                <div class="p-2">
-                    {{ form_row(form.phoneNumber) }}
-                    {{ form_errors(form.phoneNumber, {'attr': {'class': 'red-text'}}) }}
-                </div>
-                <div class="p-2">
-                    {{ form_row(form.birthDate, {'attr': {'class': 'birthDatePicker'}}) }}
-                    {{ form_errors(form.birthDate, {'attr': {'class': 'red-text'}}) }}
-                </div>
-                <div class="p-2">
-                    {{ form_row(form.lunchPackage) }}
-                    {{ form_errors(form.lunchPackage, {'attr': {'class': 'red-text'}}) }}
-                </div>
+        <h2 class="ink-text"><span class="orange step-ball-inscribe">1</span> Jouw gegevens</h2>
+        <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
+            <div class="p-2"> 
+                {{ form_row(form.firstName, {'attr': {'class': 'input'}}) }} 
+                {{ form_errors(form.firstName, {'attr': {'class': 'red-text'}}) }}</div>
+            <div class="p-2">
+                {{ form_row(form.lastName, {'attr': {'class': 'input'}}) }}
+                {{ form_errors(form.lastName, {'attr': {'class': 'red-text'}}) }}
+            </div>
+            <div class="p-2">
+                {{ form_row(form.email, {'attr': {'class': 'input'}}) }}
+                {{ form_errors(form.email, {'attr': {'class': 'red-text'}}) }}
+            </div>
+            <div class="p-2">
+                {{ form_row(form.phoneNumber, {'attr': {'class': 'input'}}) }}
+                <p>Opitoneel alleen voor wijzigingen op de dag zelf</p>
+                {{ form_errors(form.phoneNumber, {'attr': {'class': 'red-text'}}) }}
+            </div>
+            <div class="p-2">
+                    
+                {{ form_row(form.birthDate, {'attr': {'class': 'birthDatePicker input'}}) }}
+                {{ form_errors(form.birthDate, {'attr': {'class': 'red-text'}}) }}
+            </div>
+            <div class="p-2">
+                {{ form_row(form.lunchPackage, {'attr': {'class': 'input'}}) }}
+                {{ form_errors(form.lunchPackage, {'attr': {'class': 'red-text'}}) }}
+            </div>
         
         </div>
-        <div class="container">
-            {{ form_row(form.parentEmail, {'attr': {'class': 'parentEmailField'}}) }}
+        <div class="container parentContainer">
+            <p id="parentInfoText"><span>Je bent op 17 april jonger dan 16 jaar</span>We hebben daarom een emailadres van een ouder of verzorger nodig.</p>
+            {{ form_row(form.parentEmail, {'row_attr': {'class': 'parentEmailField'}}) }}
             {{ form_errors(form.parentEmail, {'attr': {'class': 'red-text'}}) }}
         </div>
         <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
@@ -48,6 +52,10 @@
             </div>
         </div>
         
+        <div class="container">
+            {{ form_row(form.comment, {'attr': {'class': 'input'}}) }}
+            {{ form_errors(form.comment, {'attr': {'class': 'red-text'}}) }}
+        </div>
         {{ form_end(form) }}
     </div>
 {% endblock %}

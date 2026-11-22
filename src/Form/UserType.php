@@ -81,7 +81,7 @@ class UserType extends AbstractType
 
             ])
             ->add('parentEmail', EmailType::class, [
-                'label' => 'Email ouder',
+                'label' => 'Email ouder/verzorger',
                 'attr' => ['placeholder' => 'ouder@voorbeeld.nl', 'class' => 'red-text'],
                 'required' => false,
                 'constraints' => [
