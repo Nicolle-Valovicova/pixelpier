@@ -22,7 +22,9 @@ final class InscribeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $inscribe = $form->getData();
+            $inscribe->setRoles['ROLE_USER'];
             $entityManager->persist($inscribe);
             $entityManager->flush();
 

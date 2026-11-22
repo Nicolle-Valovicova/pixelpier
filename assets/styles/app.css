@@ -6,12 +6,20 @@
     --grey: #6b6f80;
     --red: #c62828;
 }
+
 body {
-    background-color: var(--creme);
+  background-image: linear-gradient(
+    to right,
+    var(--ink) 20%,
+    var(--creme) 20% 100%,
+  );
 }
 /* header, btns, text */
 .ink {
     background-color: #1b1f3b;
+}
+.creme-text{
+    color: var(--creme);
 }
 .ink-text {
     color: #1b1f3b;

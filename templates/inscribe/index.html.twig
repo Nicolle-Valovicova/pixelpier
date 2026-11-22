@@ -18,14 +18,40 @@
 
     <div class="container-md my-5">
         {{ form_start(form) }}
-        <div class="row d-flex">
-            <div class="col-xs-6">
-                {{ form_row(form.firstName) }}
-                {{ form_errors(form.firstName, {'attr': {'class': 'red-text'}}) }}
-            </div>
-            <div class="col-xs-6">
-                {{ form_row(form.lastName) }}
-                {{ form_errors(form.lastName, {'attr': {'class': 'red-text'}}) }}
+            <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
+                <div class="p-2"> 
+                    {{ form_row(form.firstName) }}
+                    {{ form_errors(form.firstName, {'attr': {'class': 'red-text'}}) }}</div>
+                <div class="p-2">
+                    {{ form_row(form.lastName) }}
+                    {{ form_errors(form.lastName, {'attr': {'class': 'red-text'}}) }}
+                </div>
+                <div class="p-2">
+                    {{ form_row(form.email) }}
+                    {{ form_errors(form.email, {'attr': {'class': 'red-text'}}) }}
+                </div>
+                <div class="p-2">
+                    {{ form_row(form.phoneNumber) }}
+                    {{ form_errors(form.phoneNumber, {'attr': {'class': 'red-text'}}) }}
+                </div>
+                <div class="p-2">
+                    {{ form_row(form.birthDate) }}
+                    {{ form_errors(form.birthDate, {'attr': {'class': 'red-text'}}) }}
+                </div>
+                <div class="p-2">
+                    {{ form_row(form.lunchPackage) }}
+                    {{ form_errors(form.lunchPackage, {'attr': {'class': 'red-text'}}) }}
+                </div>
+        
+        </div>
+        <div class="container">
+            {{ form_row(form.parentEmail, {'attr': {'class': 'parentEmailField'}}) }}
+                {{ form_errors(form.parentEmail, {'attr': {'class': 'red-text'}}) }}
+        </div>
+        <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
+            <div class="p-2"> 
+                {{ form_row(form.workshops) }}
+                {{ form_errors(form.workshops, {'attr': {'class': 'red-text'}}) }}
             </div>
         </div>
         
