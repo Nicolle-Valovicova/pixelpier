@@ -8,17 +8,17 @@
 }
 
 body {
-  background-image: linear-gradient(
-    to bottom,
-    var(--ink) 25%,
-    var(--creme) 25% 100%
-  );
+    background-image: linear-gradient(
+        to bottom,
+        var(--ink) 25%,
+        var(--creme) 25% 100%
+    );
 }
 /* header, btns, text */
 .ink {
     background-color: #1b1f3b;
 }
-.creme-text{
+.creme-text {
     color: var(--creme);
 }
 .ink-text {
@@ -32,47 +32,62 @@ body {
     color: var(--orange);
 }
 /* labels, bar, parent field */
-.mint{
+.mint {
     background-color: var(--mint);
 }
-.mint-text{
+.mint-text {
     color: var(--mint);
 }
 /* helptext, metadata */
-.grey-text{
+.grey-text {
     color: var(--grey);
 }
 /* faults and reds */
-.red-text{
+.red-text {
     color: var(--red);
 }
-.width-80{
+.width-80 {
     width: 80%;
     justify-self: center;
 }
-.inscribe-badge{
+.inscribe-badge {
     border-radius: 25px;
     padding: 5px;
     width: fit-content;
     font-size: 12px;
 }
-.hidden{
+.hidden {
     display: none;
 }
-.show{
+.show {
     display: block;
 }
-.form-style{
+.form-style {
     background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 25px;
 }
-.step-ball-inscribe{
+.step-ball-inscribe {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 50px;
 }
-.input{
+.input {
     border: 2px solid #6b6f8048;
 }
-.parentContainer{
+.parentContainer {
     border: 2px 0px 0px 0px solid var(--mint);
+    background-color: #2ec4b57b;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.form-check {
+    padding: 20px;
+    padding-left: 50px;
+    background-color: #d6d1cc;
+    border-radius: 10px;
+    
+    border: 2px solid var(--orange-text);
 }

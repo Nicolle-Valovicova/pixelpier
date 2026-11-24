@@ -40,15 +40,17 @@
             </div>
         
         </div>
-        <div class="container parentContainer">
-            <p id="parentInfoText"><span>Je bent op 17 april jonger dan 16 jaar</span>We hebben daarom een emailadres van een ouder of verzorger nodig.</p>
-            {{ form_row(form.parentEmail, {'row_attr': {'class': 'parentEmailField'}}) }}
+        <div class="container parentContainer hidden">
+            <p id="parentInfoText" class=""><span>Je bent op 17 april jonger dan 16 jaar</span>We hebben daarom een emailadres van een ouder of verzorger nodig.</p>
+            {{ form_row(form.parentEmail, {'row_attr': {'class': 'parentEmailField '}}) }}
             {{ form_errors(form.parentEmail, {'attr': {'class': 'red-text'}}) }}
         </div>
-        <div style="grid-template-columns: 1fr 1fr;" class="d-grid gap-3">
-            <div class="p-2"> 
-                {{ form_row(form.workshops) }}
-                {{ form_errors(form.workshops, {'attr': {'class': 'red-text'}}) }}
+        <div class="container">
+            <div class="row">
+                <div class="col-6"> 
+                    {{ form_row(form.workshops, {'attr': {'class': 'workshopChooseField'}}) }}
+                    {{ form_errors(form.workshops, {'attr': {'class': 'red-text'}}) }}
+                </div>
             </div>
         </div>
         

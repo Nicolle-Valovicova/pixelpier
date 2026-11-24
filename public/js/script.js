@@ -1,5 +1,5 @@
 let inputBirthDate = document.querySelector(".birthDatePicker").value; // Get value
-const parentField = document.querySelector(".parentEmailField");
+const parentField = document.querySelector(".parentContainer");
 const parentInfoText = document.querySelector("#parentInfoText");
 
 function showParentfield() {
@@ -15,8 +15,6 @@ function hideParentfield() {
     parentInfoText.classList.add("hidden");
     parentInfoText.classList.add("hidden");
 }
-
-hideParentfield();
 
 function calculateAge(birthDate) {
     const today = new Date();
@@ -37,3 +35,5 @@ function calculateAge(birthDate) {
     }
     return years;
 }
+
+calculateAge(inputBirthDate);
